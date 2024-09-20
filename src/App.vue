@@ -111,12 +111,11 @@ onMounted(() => {
   const styleContent = "color: rgb(30,152,255);";
   const title1 = "Musifeiの主页";
   const title2 = `
- __  __           _  _____      _     
-|  \\/  |         (_)/ ____|    (_)    
-| \\  / |   ___    _| |  __  ___ _ ___ 
-| |\\/| |  / _ \\  | | | |_ |/ _ \\ / __|
-| |  | | | (_) | | | |__| |  __/ \\__ \\
-|_|  |_|  \\___/  |_|\\_____|\\___|_|___/
+  __  __                 _    __          _ 
+ |  \/  |  _   _   ___  (_)  / _|   ___  (_)
+ | |\/| | | | | | / __| | | | |_   / _ \ | |
+ | |  | | | |_| | \__ \ | | |  _| |  __/ | |
+ |_|  |_|  \__,_| |___/_|_| |_|    \___| |_|
 `;
   const content = `\n\n版本: ${config.version}\n主页: ${config.home}\nGithub: ${config.github}`;
   console.info(`%c${title1} %c${title2} %c${content}`, styleTitle1, styleTitle2, styleContent);
