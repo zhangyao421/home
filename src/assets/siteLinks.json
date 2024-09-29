@@ -33,5 +33,10 @@
     "icon": "LaptopCode",
     "name": "站点监测",
     "link": "https://status.imsyy.top/"
+  },
+  {
+    "icon": "FileUploadOutlined",
+    "name": "文件快递柜",
+    "link": "https://file.musifei.live/"
   }
 ]
