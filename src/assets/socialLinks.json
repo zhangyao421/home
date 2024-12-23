@@ -9,13 +9,13 @@
     "name": "BiliBili",
     "icon": "/images/icon/bilibili.png",
     "tip": "(゜-゜)つロ 干杯 ~",
-    "url": "https://space.bilibili.com/1852746636"
+    "url": ""
   },
   {
     "name": "QQ",
     "icon": "/images/icon/qq.png",
     "tip": "有什么事吗",
-    "url": "https://res.abeim.cn/api/qq/?qq=2839111405"
+    "url": ""
   },
   {
     "name": "Email",
