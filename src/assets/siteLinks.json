@@ -7,22 +7,22 @@
   {
     "icon": "Cloud",
     "name": "网盘",
-    "link": "https://pan.imsyy.top/"
+    "link": ""
   },
   {
     "icon": "CompactDisc",
     "name": "音乐",
-    "link": "https://music.imsyy.top/"
+    "link": ""
   },
   {
     "icon": "Compass",
     "name": "起始页",
-    "link": "https://nav.imsyy.top/"
+    "link": ""
   },
   {
     "icon": "Book",
     "name": "网址集",
-    "link": "https://web.imsyy.top/"
+    "link": ""
   },
   {
     "icon": "Fire",
@@ -32,11 +32,16 @@
   {
     "icon": "LaptopCode",
     "name": "站点监测",
-    "link": "https://status.imsyy.top/"
+    "link": ""
   },
   {
     "icon": "FileUpload",
     "name": "文件快递柜",
     "link": "https://file.musifei.live/"
+  }
+    {
+    "icon": "Link",
+    "name": "短链",
+    "link": "https://sink.musifei.live/"
   }
 ]
