@@ -71,6 +71,7 @@ const siteIcon = {
   Fire,
   LaptopCode,
   FileUpload,
+  Link,
 };
 
 // 链接跳转
