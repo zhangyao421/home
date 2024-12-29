@@ -5,7 +5,8 @@
 </template>
 
 <style lang="scss" scoped>
-.more-content {
+/*
+  .more-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,4 +14,15 @@
   width: 100%;
   height: 100%;
 }
+*/
+  .more-content {
+    font-family: serif; /* 选择合适的字体 */
+    font-size: 16px; /* 设置字体大小 */
+    line-height: 1.5; /* 设置行高 */
+    text-align: justify; /* 两端对齐文本 */
+    padding: 20px; /* 添加内边距 */
+    background-color: #f8f8f8; /* 设置背景颜色 */
+    border-radius: 5px; /* 添加圆角 */
+    margin-bottom: 20px; /* 添加底部边距 */
+  }
 </style>
