@@ -1,5 +1,6 @@
 <template>
   <div class="weather" v-if="weatherData.adCode.city && weatherData.weather.weather">
+    <span v-if="mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
     <span>{{ weatherData.adCode.city }}&nbsp;</span>
     <span>{{ weatherData.weather.weather }}&nbsp;</span>
     <span>{{ weatherData.weather.temperature }}℃</span>
@@ -93,7 +94,7 @@ const getWeatherData = async () => {
       weatherData.adCode = {
           city: data.location?.city || "未知地区",
           // 如果需要 region 也可以加上
-          // region: data.location?.region
+          region: data.location?.region
       };
       
       weatherData.weather = {
