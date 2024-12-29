@@ -1,6 +1,6 @@
 <template>
   <div class="weather" v-if="weatherData.adCode.city && weatherData.weather.weather">
-    <span v-if="mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
+    <span v-if="!mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
     <span>{{ weatherData.adCode.city }}&nbsp;</span>
     <span>{{ weatherData.weather.weather }}&nbsp;</span>
     <span>{{ weatherData.weather.temperature }}℃</span>
