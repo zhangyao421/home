@@ -1,5 +1,101 @@
 <template>
   <div class="weather" v-if="weatherData.adCode.city && weatherData.weather.weather">
+    <div :class="{ 'weather-two-lines': shouldSplitLines }">
+      <template v-if="shouldSplitLines">
+        <!-- 超长时第一行 - 只显示地区 -->
+        <div class="weather-line">
+          <span v-if="!mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
+          <span>{{ weatherData.adCode.city }}</span>
+        </div>
+        
+        <!-- 超长时第二行 - 显示天气、温度和风向信息 -->
+        <div class="weather-line">
+          <span>{{ weatherData.weather.weather }}&nbsp;</span>
+          <span>{{ weatherData.weather.temperature }}℃</span>
+          <template v-if="mainKey">
+            <span class="sm-hidden">
+              &nbsp;{{
+                weatherData.weather.winddirection?.endsWith("风")
+                  ? weatherData.weather.winddirection
+                  : weatherData.weather.winddirection + "风"
+              }}&nbsp;
+            </span>
+            <span class="sm-hidden">{{ weatherData.weather.windpower }}&nbsp;级</span>
+          </template>
+        </div>
+      </template>
+
+      <!-- 未超长时单行显示 -->
+      <template v-else>
+        <div class="weather-line">
+          <span v-if="!mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
+          <span>{{ weatherData.adCode.city }}&nbsp;</span>
+          <span>{{ weatherData.weather.weather }}&nbsp;</span>
+          <span>{{ weatherData.weather.temperature }}℃</span>
+          <template v-if="mainKey">
+            <span class="sm-hidden">
+              &nbsp;{{
+                weatherData.weather.winddirection?.endsWith("风")
+                  ? weatherData.weather.winddirection
+                  : weatherData.weather.winddirection + "风"
+              }}&nbsp;
+            </span>
+            <span class="sm-hidden">{{ weatherData.weather.windpower }}&nbsp;级</span>
+          </template>
+        </div>
+      </template>
+    </div>
+  </div>
+  <div class="weather" v-else>
+    <span>天气数据获取失败</span>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    fullText() {
+      let text = '';
+      if (!this.mainKey) {
+        text += this.weatherData.adCode.region + ' ';
+      }
+      text += this.weatherData.adCode.city + ' ' +
+              this.weatherData.weather.weather + ' ' +
+              this.weatherData.weather.temperature + '℃';
+      
+      if (this.mainKey) {
+        text += ' ' + 
+               (this.weatherData.weather.winddirection?.endsWith("风")
+                  ? this.weatherData.weather.winddirection
+                  : this.weatherData.weather.winddirection + "风") +
+               ' ' + this.weatherData.weather.windpower + ' 级';
+      }
+      return text;
+    },
+    shouldSplitLines() {
+      return this.fullText.length > 240;
+    }
+  }
+}
+</script>
+
+<style scoped>
+.weather-two-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* 两行之间的间距 */
+}
+
+.weather-line {
+  display: flex;
+  align-items: center;
+}
+</style>
+
+
+<!--
+<template>
+  <div class="weather" v-if="weatherData.adCode.city && weatherData.weather.weather">
     <span v-if="!mainKey">{{ weatherData.adCode.region }}&nbsp;</span>
     <span>{{ weatherData.adCode.city }}&nbsp;</span>
     <span>{{ weatherData.weather.weather }}&nbsp;</span>
@@ -13,7 +109,7 @@
       }}&nbsp;
     </span>
     <span class="sm-hidden">{{ weatherData.weather.windpower }}&nbsp;级</span>
---> 
+<!--
     <template v-if="mainKey">
     <span class="sm-hidden">
         &nbsp;{{
@@ -29,7 +125,7 @@
     <span>天气数据获取失败</span>
   </div>
 </template>
-
+-->
 <script setup>
 import { getAdcode, getWeather, getOtherWeather } from "@/api";
 import { Error } from "@icon-park/vue-next";
