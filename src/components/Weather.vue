@@ -100,7 +100,7 @@ export default {
     <span>{{ weatherData.adCode.city }}&nbsp;</span>
     <span>{{ weatherData.weather.weather }}&nbsp;</span>
     <span>{{ weatherData.weather.temperature }}℃</span>
-<!--
+------------------
     <span class="sm-hidden">
       &nbsp;{{
         weatherData.weather.winddirection?.endsWith("风")
@@ -109,7 +109,7 @@ export default {
       }}&nbsp;
     </span>
     <span class="sm-hidden">{{ weatherData.weather.windpower }}&nbsp;级</span>
-<!--
+------------------
     <template v-if="mainKey">
     <span class="sm-hidden">
         &nbsp;{{
