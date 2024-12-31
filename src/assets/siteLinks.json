@@ -12,12 +12,12 @@
   {
     "icon": "CompactDisc",
     "name": "音乐",
-    "link": "https://musifei.live/"
+    "link": "https://music.musifei.live/"
   },
   {
     "icon": "Compass",
     "name": "起始页",
-    "link": "https://musifei.live/"
+    "link": "https://nav.musifei.live/"
   },
   {
     "icon": "Book",
@@ -32,7 +32,7 @@
   {
     "icon": "LaptopCode",
     "name": "站点监测",
-    "link": "https://musifei.live/"
+    "link": "https://status.musifei.live/"
   },
   {
     "icon": "FileUpload",
